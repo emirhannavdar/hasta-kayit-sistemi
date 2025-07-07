@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h2>SMS Logları</h2>
+<table border="1" cellpadding="5" cellspacing="0">
+    <tr>
+        <th>Hasta</th>
+        <th>Mesaj Tipi</th>
+        <th>Mesaj</th>
+        <th>Durum</th>
+        <th>Tarih</th>
+        <th>Hata</th>
+    </tr>
+    {% for log in logs %}
+    <tr>
+        <td>{{ log.patient }}</td>
+        <td>{{ log.message_type }}</td>
+        <td>{{ log.message_body }}</td>
+        <td>{{ log.status }}</td>
+        <td>{{ log.sent_at }}</td>
+        <td>{{ log.error_message }}</td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %} 

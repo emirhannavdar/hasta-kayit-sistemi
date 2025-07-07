@@ -1,0 +1,19 @@
+{# core/templates/home.html #}
+{% extends 'base.html' %}
+
+{% block title %}Ana Sayfa{% endblock %}
+
+{% block content %}
+    <div class="jumbotron text-center">
+        <h1 class="display-4">Hasta Kayıt ve Bildirim Sistemi</h1>
+        <p class="lead">Hoş geldiniz, {{ user.username }}. Bu sistem, hasta kayıtlarını yönetmenize ve otomatik SMS bildirimleri göndermenize yardımcı olur.</p>
+        <hr class="my-4">
+        <p>Başlamak için aşağıdaki seçenekleri kullanabilirsiniz:</p>
+        <p class="d-grid gap-2 col-6 mx-auto">
+            <a class="btn btn-primary btn-lg" href="{% url 'add_patient' %}" role="button">Yeni Hasta Ekle</a>
+            <a class="btn btn-secondary btn-lg" href="{% url 'patient_list' %}" role="button">Tüm Hastaları Görüntüle</a>
+            <a class="btn btn-secondary btn-lg" href="{% url 'sms_log_list' %}" role="button">Logları görüntüle</a>
+
+        </p>
+    </div>
+{% endblock %}
