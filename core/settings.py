@@ -74,8 +74,8 @@ DATABASES = {
         'NAME': config('DATABASE_NAME'),
         'USER': config('DATABASE_USER'),
         'PASSWORD': config('DATABASE_PASSWORD'),
-        'HOST': 'localhost',  # Docker konteyneri localhost'unuzdan erişilebilir olacak
-        'PORT': '5432',
+        'HOST': config('DATABASE_HOST', default='localhost'),  # Docker konteyneri localhost'unuzdan erişilebilir olacak
+        'PORT': config('DATABASE_PORT', default='5432'),
     }
 }
 
